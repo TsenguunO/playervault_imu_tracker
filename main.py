@@ -11,3 +11,7 @@ async def receive_imu(request: Request):
     data = await request.json()
     print("📥 Received IMU Data:", data)
     return {"status": "received"}
+
+
+#test
+#test
