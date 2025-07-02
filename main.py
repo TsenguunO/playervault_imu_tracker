@@ -35,7 +35,7 @@ async def init_db():
 @app.get("/")
 def health_check():
     return {"status": "IMU API running with log-html"}
-
+#
 @app.post("/imu")
 async def receive_imu(request: Request):
     data = await request.json()
