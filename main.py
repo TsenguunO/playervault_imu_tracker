@@ -32,6 +32,10 @@ async def init_db():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
+@app.get("/")
+def health_check():
+    return {"status": "IMU API running with log-html"}
+
 @app.post("/imu")
 async def receive_imu(request: Request):
     data = await request.json()
